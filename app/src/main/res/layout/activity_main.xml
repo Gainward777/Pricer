@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20dp"
+    android:background="@color/black"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/mainVerticalLine"
+        app:layout_constraintBottom_toBottomOf="@+id/mainCentralHorisontalLine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/mainVerticalLine"
+        app:layout_constraintBottom_toBottomOf="@+id/mainCentralHorisontalLine"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_frame" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mainCentralHorisontalLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mainVerticalLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintTop_toTopOf="@+id/mainCentralHorisontalLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp">
+
+        <TextView
+            android:id="@+id/hideViewForFirstEdit"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHeight_percent="0.08"
+            android:layout_marginLeft="8sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text=""
+            android:paddingBottom="0sp"
+            android:paddingTop="0sp"
+            android:visibility="invisible"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1sp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeStepGranularity="4sp" />
+
+        <EditText
+            android:id="@+id/setPrice"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHeight_percent="0.08"
+            android:layout_marginLeft="8sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text=""
+            android:paddingBottom="0sp"
+            android:paddingTop="0sp"
+            android:hint="Enter price"
+            android:background="@android:color/transparent"
+            android:textColorHint="@color/white"
+            android:inputType="numberDecimal"
+            android:digits="123456780."/>
+
+        <Spinner
+            android:id="@+id/valAsStr"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintRight_toRightOf="@id/secondVerticalLine"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/setPrice"
+            app:layout_constraintHeight_percent="0.08"
+            android:layout_marginRight="8sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            app:barrierMargin="1sp"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/priceWithExchange"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintRight_toRightOf="@+id/secondVerticalLine"
+            app:layout_constraintTop_toBottomOf="@id/setPrice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHeight_percent="0.22"
+            android:layout_marginRight="8sp"
+            android:layout_marginLeft="8sp"
+            android:layout_marginBottom="8sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Price after exchange"
+            android:paddingLeft="8sp"
+            android:paddingRight="8sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="38sp"
+            android:autoSizeStepGranularity="2sp" />
+
+        <Button
+            android:id="@+id/cartAdd"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintLeft_toLeftOf="@+id/secondVerticalLine"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            android:layout_margin="8sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeStepGranularity="2sp"
+            android:text="Add to Cart"/>
+
+        <TextView
+            android:id="@+id/invisibleRate"
+            android:visibility="invisible"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintRight_toRightOf="@+id/firstVerticalLine"
+            app:layout_constraintTop_toBottomOf="@id/priceWithExchange"
+            app:layout_constraintBottom_toTopOf="@+id/recognize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="8sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1sp"
+            android:autoSizeMaxTextSize="38sp"
+            android:autoSizeStepGranularity="1sp"
+            android:padding="5sp"
+
+            android:gravity="center"
+            android:text="" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/rateInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@null"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintRight_toRightOf="@+id/firstVerticalLine"
+            app:layout_constraintTop_toBottomOf="@id/priceWithExchange"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            android:layout_margin="8sp"
+            android:textColorHint="@color/white"
+            android:gravity="center" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="0sp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+
+                android:background="@android:color/transparent"
+                android:digits="1234567890."
+                android:inputType="numberDecimal"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/totalPriceInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@null"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="@id/firstVerticalLine"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/priceWithExchange"
+            app:layout_constraintHeight_percent="0.3"
+            android:layout_margin="8dp"
+            android:textColorHint="@color/white"
+            android:gravity="center"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/totalPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:editable="false"
+                android:padding="0sp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="36sp"
+                android:text="Total price"
+                android:background="@android:color/transparent"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/invisibleTotalPrice"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintLeft_toLeftOf="@id/firstVerticalLine"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/priceWithExchange"
+            app:layout_constraintHeight_percent="0.3"
+            android:layout_margin="8sp"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="1sp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeStepGranularity="1sp"
+            android:gravity="center"
+            android:text="Total price" />
+
+        <Button
+            android:id="@+id/recognize"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            app:layout_constraintTop_toBottomOf="@id/rate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            android:layout_margin="8sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeStepGranularity="2sp"
+            android:text="Recognize"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/secondVerticalLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstVerticalLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

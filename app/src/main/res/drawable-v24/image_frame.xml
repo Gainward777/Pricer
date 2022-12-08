@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M2,2L2,20"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M106,2L106, 20"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M2,2L20,2"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M88,2L106,2"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M2, 106L20,106"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M88, 106L106, 106"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M106, 88L106, 106"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M2, 88L2, 106"
+        android:strokeWidth="0.8"
+        android:strokeColor="@color/purple_500" />
+
+</vector>

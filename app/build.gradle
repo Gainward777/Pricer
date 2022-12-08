@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.pricer'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.pricer"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // CameraX core library using the camera2 implementation
+    def camerax_version = "1.1.0-alpha08"
+    // The following line is optional, as the core library is included indirectly by camera-camera2
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    // If you want to additionally use the CameraX Lifecycle library
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    // If you want to additionally use the CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha14"
+    // If you want to additionally use the CameraX Extensions library
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha14"
+
+    // for model loading and minimal image preprocessing like convert to tensor
+    implementation 'org.pytorch:pytorch_android_lite:1.12.1'
+    implementation 'org.pytorch:pytorch_android_torchvision_lite:1.12.1'
+
+    // that contains nms we need it for postprocessing into model not in app
+    implementation 'org.pytorch:torchvision_ops:0.13.1'
+    // needed to add torchvision_ops before load model
+    implementation 'com.facebook.soloader:nativeloader:0.8.0'
+}
